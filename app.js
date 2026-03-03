@@ -146,13 +146,13 @@ const SINGLE_USE_EXTRA_VALUES = new Set(["wildchild", "horses", "axes", "escaper
 
 const EXTRA_OPTIONS = [
   { value: "wildchild", label: "Wild Child Quest", hint: "הרפתקה בנווה צדק", singleUse: true, day2Only: false },
-  { value: "horses", label: "טיול סוסים", hint: "אם התאריך עדיין פנוי", singleUse: true, day2Only: false },
   { value: "beach_rest", label: "מנוחה בחוף ים", hint: "", singleUse: false, day2Only: false },
   { value: "chill_hotel", label: "צ'ל במלון", hint: "", singleUse: false, day2Only: false },
   { value: "axes", label: "גרזנים ונהנים", hint: "שושו קולעת למטרה", singleUse: true, day2Only: false },
   { value: "escaperoom", label: "אסקייפ רום", hint: "מפצחי השושוים", singleUse: true, day2Only: false },
   { value: "tour_ajami", label: "סיור בעג'מי", hint: "11.3, 17:00–19:00", singleUse: true, day2Only: true },
   { value: "shopping", label: "שופינג", hint: "סיבוב סטייל בנווה צדק", singleUse: false, day2Only: false },
+  { value: "horses", label: "טיול סוסים", hint: "אם התאריך עדיין פנוי", singleUse: true, day2Only: false },
   { value: "carmel_market", label: "סיור בשוק הכרמל", hint: "אוכלים, שותים ונהנים", singleUse: false, day2Only: false },
 ];
 
