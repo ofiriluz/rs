@@ -285,7 +285,7 @@ function renderTimeline(state) {
   const unlocked = allUnlocked || isDayUnlocked(activeDay, state);
 
   const showDayDescription = unlocked;
-  const dateSubText = formatDateHuman(activeDay.dateISO).replace(/^יום\s/, "");
+  const dateSubText = formatDateHuman(activeDay.dateISO).replace(/^יום\s/, "ביום ");
   const bannerSubText = showDayDescription
     ? `${escapeHtml(activeDay.theme)} · ${escapeHtml(dateSubText)}`
     : escapeHtml(dateSubText);
@@ -314,11 +314,9 @@ function renderTimeline(state) {
     </section>`;
 
   if (!available) {
-    const openableDateText = formatDateHuman(getDayOpenableDateISO(activeDay));
     timeline.innerHTML = `${daySwitcherHtml}${banner}
       <section class="unlock" aria-label="נעול">
         <h3 class="unlock__title">היום הזה עדיין לא נפתח</h3>
-        <p class="unlock__sub">יפתח ב־${escapeHtml(openableDateText)} (יום לפני היום עצמו).</p>
       </section>
     `;
     attachDaySwitcher(state);
