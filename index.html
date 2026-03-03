@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>3 ימים בתל אביב — Birthday Edition</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">דלג לתוכן</a>
+
+    <header class="hero" id="top">
+      <div class="container hero__inner">
+        <p class="eyebrow" dir="ltr">3 Days in TLV · Birthday Edition</p>
+        <h1 class="hero__title">יום הולדת שמח! — 3 ימים בתל אביב</h1>
+        <p class="hero__subtitle">רוב התוכנית כבר מוכנה, עם ניחוח יפני - ואת משלימה את השאר :)</p>
+
+        <div class="hero__actions">
+          <button class="btn btn--primary" id="startBtn" type="button">מתחילים</button>
+          <button class="btn" id="resetBtn" type="button">איפוס בחירות</button>
+        </div>
+        <div class="hero__secret" id="secretShortcut" aria-hidden="true" title="">
+          <span class="hero__secret-dot" data-secret="1"></span>
+          <span class="hero__secret-dot" data-secret="2"></span>
+          <span class="hero__secret-dot" data-secret="3"></span>
+        </div>
+
+        <p class="hero__note" id="savedHint" aria-live="polite"></p>
+      </div>
+    </header>
+
+    <main id="main" class="main" tabindex="-1">
+      <div class="container grid">
+        <section class="panel" aria-labelledby="timelineTitle">
+          <div class="panel__header">
+            <h2 id="timelineTitle">היום שלנו</h2>
+            <p class="muted" id="dayMeta" aria-live="polite"></p>
+          </div>
+
+          <div id="timeline" class="timeline" role="list"></div>
+        </section>
+
+        <aside class="panel" aria-labelledby="choicesTitle">
+          <div class="panel__header">
+            <h2 id="choicesTitle">Choose Our Adventure</h2>
+            <p class="muted">כל בחירה כאן ממלאת slot ביום הנוכחי.</p>
+          </div>
+
+          <div id="choices" class="choices" aria-live="polite"></div>
+
+          <div class="panel__footer">
+            <p class="muted small">
+              טיפ: אפשר לפתוח את האתר מהטלפון במהלך היום — הבחירות נשמרות על המכשיר.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="muted small">נבנה באהבה.</p>
+        <a class="small" href="#top">חזרה למעלה</a>
+      </div>
+    </footer>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
