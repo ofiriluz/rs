@@ -131,6 +131,7 @@ const EXTRA_OPTIONS = [
   { value: "escaperoom", label: "אסקייפ רום", hint: "מפצחי השושוים", singleUse: true, day2Only: false },
   { value: "tour_ajami", label: "סיור בעג'מי", hint: "11.3, 17:00–19:00", singleUse: true, day2Only: true },
   { value: "shopping", label: "שופינג", hint: "סיבוב סטייל בנווה צדק", singleUse: false, day2Only: false },
+  { value: "carmel_market", label: "סיור בשוק הכרמל", hint: "אוכלים, שותים ונהנים", singleUse: false, day2Only: false },
 ];
 
 function getSelectedValues(slotKey, state) {
