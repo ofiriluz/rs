@@ -564,6 +564,14 @@ function renderChoices(state) {
   const available = allUnlocked || isDayAvailable(activeDay, nowISO);
   const unlocked = allUnlocked || isDayUnlocked(activeDay, state);
 
+  const choicesSubtitle = document.getElementById("choicesSubtitle");
+  const choicesHeader = choicesSubtitle?.closest(".panel__header");
+  const choicesPanel = choicesSubtitle?.closest(".panel");
+  const showSubtitle = available && unlocked;
+  if (choicesSubtitle) choicesSubtitle.style.display = showSubtitle ? "" : "none";
+  if (choicesHeader) choicesHeader.classList.toggle("panel__header--no-subtitle", !showSubtitle);
+  if (choicesPanel) choicesPanel.classList.toggle("panel--no-choices-subtitle", !showSubtitle);
+
   if (!available) {
     choicesRoot.innerHTML = `<p class="muted">הבחירות של היום יופיעו כשהיום ייפתח.</p>`;
     return;
