@@ -90,6 +90,7 @@ const PLAN = {
         { id: "d2-lunch", time: "צהריים", type: "planned", title: "קוקו נקו צהריים", meta: "ראמן סאן!" },
         { id: "d2-choices", time: "אחה\"צ", type: "choose", title: "אחר הצהריים יחדיו", meta: "לבחירתך", slotKey: "day2-choices" },
         { id: "d2-21", time: "21:00", type: "planned", title: "סושי אומקאסה", meta: "אמרתי כבר יפן?" },
+        { id: "d2-relax", time: "סוף היום", type: "choose", title: "סוף יום זוגי", meta: "לבחירתך", slotKey: "day2-relax" },
       ],
     },
     {
@@ -110,6 +111,7 @@ const PLAN = {
         { id: "d3-noon", time: "צהריים", type: "choose", title: "צהריים — את בוחרת", meta: "בחירה 1", slotKey: "day3-choices", choiceIndex: 0 },
         { id: "d3-afternoon", time: "אחה\"צ", type: "choose", title: "אחרי הצהריים — את בוחרת", meta: "בחירה 2", slotKey: "day3-choices", choiceIndex: 1 },
         { id: "d3-evening", time: "20:00", type: "planned", title: "מסיבה עם כנסיית השכל", meta: "סיום בסטייל" },
+        { id: "d3-relax", time: "סוף היום", type: "choose", title: "סוף יום זוגי", meta: "לבחירתך", slotKey: "day3-relax" },
       ],
     },
   ],
@@ -117,6 +119,26 @@ const PLAN = {
     "day1-choices": { title: "יום 1 · את בוחרת", subtitle: "בחרי אופציה אחת", optionsKey: "extra", multiPick: false },
     "day2-choices": { title: "יום 2 · את בוחרת", subtitle: "בחרי אופציה אחת", optionsKey: "extra", multiPick: false },
     "day3-choices": { title: "יום 3 · צהריים ואחה\"צ — את בוחרת", subtitle: "בחרי עד 2 אופציות (צהריים + אחה\"צ)", optionsKey: "extra", multiPick: true, maxPicks: 2 },
+    "day2-relax": {
+      title: "מרגוע · סוף היום",
+      subtitle: "בחרי אופציה אחת",
+      multiPick: false,
+      options: [
+        { value: "oh_my_box", label: "Oh My Box Leftover", hint: "" },
+        { value: "couple_relax", label: "המרגוע האמבייטי הזוגי הרגיל שלנו :)", hint: "" },
+        { value: "netflix_and_chill", label: "Netflix and chill", hint: "" },
+      ],
+    },
+    "day3-relax": {
+      title: "מרגוע · סוף היום",
+      subtitle: "בחרי אופציה אחת",
+      multiPick: false,
+      options: [
+        { value: "oh_my_box", label: "Oh My Box Leftover", hint: "" },
+        { value: "couple_relax", label: "המרגוע האמבייטי הזוגי הרגיל שלנו :)", hint: "" },
+        { value: "netflix_and_chill", label: "Netflix and chill", hint: "" },
+      ],
+    },
   },
 };
 
