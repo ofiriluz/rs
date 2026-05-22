@@ -46,13 +46,13 @@ function normalizeAnswer(s) {
 // ערוך פה את התוכן: ימים + slots מתוכננים ו־slots לבחירה.
 // type: planned = מתוכנן, choose = את בוחרת מתוך אופציות
 const PLAN = {
-  title: "3 ימים בתל אביב — Birthday Edition",
-  startDateISO: "2026-03-10",
+  title: "4 ימים בתל אביב — Birthday Edition",
+  startDateISO: "2026-05-26",
   days: [
     {
       id: "day1",
       title: "יום ראשון",
-      theme: "יקב, מלון קמפינסקי וסדנה יפנית",
+      theme: "יקב, מלון קמפינסקי, סושי וחגיגה",
       dateISO: null,
       image: "./assets/day1.jpg",
       imageFallback: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80",
@@ -62,19 +62,18 @@ const PLAN = {
         answers: ["הארי פוטר", "South Park", "Hamilton", "Harry Potter", "סאות פארק", "המילטון"],
       },
       items: [
-        { id: "d1-morning", time: "11:00", type: "planned", title: "סיור ביקב + ארוחת גבינות ויין", meta: "מתחילים את היום בסגנון" },
+        { id: "d1-morning", time: "בוקר", type: "planned", title: "סיור ביקב + ארוחת גבינות ויין", meta: "מתחילים את היום בסגנון" },
         { id: "d1-noon", time: "צהריים", type: "planned", title: "הגעה למלון קמפינסקי", meta: "צ'ק-אין, חדר, מתארגנים" },
         { id: "d1-lunch", time: "צהריים", type: "planned", title: "ארוחת צהריים במסעדת המלון", meta: "או מנוחה :)" },
         { id: "d1-choices", time: "אחה\"צ", type: "choose", title: "אחר הצהריים יחדיו", meta: "לבחירתך", slotKey: "day1-choices" },
-        { id: "d1-19", time: "19:00", type: "planned", title: "סדנה יפנית", meta: "מבשלים עם השושו" },
-        { id: "d1-late", time: "22:30", type: "planned", title: "מגזינו — קינוח", meta: "נומנומנומ" },
-        { id: "d1-late", time: "אל תוך הלילה", type: "planned", title: "Potion Bar, חגיגה!", meta: "שותים ונהנים" },
+        { id: "d1-sushi", time: "ערב", type: "planned", title: "סושי אומקאסה", meta: "אמרתי כבר יפן?" },
+        { id: "d1-potion", time: "לילה", type: "planned", title: "Potion Bar, חגיגה!", meta: "שותים ונהנים" },
       ],
     },
     {
       id: "day2",
       title: "יום שני",
-      theme: "ספא, סושי ובחירתה של רוני",
+      theme: "ספא, סדנה יפנית ודאבל דייט",
       dateISO: null,
       image: "./assets/day2.jpg",
       imageFallback: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80",
@@ -85,18 +84,19 @@ const PLAN = {
       },
       items: [
         { id: "d2-breakfast", time: "בוקר", type: "planned", title: "ארוחת בוקר במלון", meta: "רק אם נצליח לקום" },
-        { id: "d2-spa", time: "11:30", type: "planned", title: "ספא", meta: "רוגע יחדיו" },
+        { id: "d2-spa", time: "בוקר", type: "planned", title: "ספא", meta: "רוגע יחדיו" },
         { id: "d2-noon", time: "צהריים", type: "planned", title: "חזרה לחדר, מסתובבים", meta: "לנשום" },
-        { id: "d2-lunch", time: "צהריים", type: "planned", title: "קוקו נקו צהריים", meta: "ראמן סאן!" },
+        { id: "d2-lunch", time: "צהריים", type: "planned", title: "ארוחת צהריים רגועה", meta: "לבחריתך" },
         { id: "d2-choices", time: "אחה\"צ", type: "choose", title: "אחר הצהריים יחדיו", meta: "לבחירתך", slotKey: "day2-choices" },
-        { id: "d2-21", time: "21:00", type: "planned", title: "סושי אומקאסה", meta: "אמרתי כבר יפן?" },
+        { id: "d2-workshop", time: "ערב", type: "planned", title: "סדנה יפנית", meta: "מבשלים עם השושו" },
+        { id: "d2-double", time: "ערב", type: "planned", title: "דאבל דייט!", meta: "מאריצה" },
         { id: "d2-relax", time: "סוף היום", type: "choose", title: "סוף יום זוגי", meta: "לבחירתך", slotKey: "day2-relax" },
       ],
     },
     {
       id: "day3",
       title: "יום שלישי",
-      theme: "Work Off Art, כנסיית השכל, ובחירתה של שושו!",
+      theme: "Work Off Art, קוקו נקו וכנסיית השכל",
       dateISO: null,
       image: "./assets/day3.jpg",
       imageFallback: "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800&q=80",
@@ -106,19 +106,41 @@ const PLAN = {
         answers: ["שושו", "שושית", "אנגרי", "מתוקיתוקי", "שי חולוד", "שממונקה"],
       },
       items: [
-        { id: "d3-morning", time: "בוקר", type: "planned", title: "ארוחת בוקר במלון", meta: "" },
+        { id: "d3-morning", time: "בוקר", type: "planned", title: "ארוחת בוקר במלון", meta: "רק אם נצליח לקום" },
         { id: "d3-workoff", time: "בוקר", type: "planned", title: "Work Off Art", meta: "תערוכה" },
-        { id: "d3-noon", time: "צהריים", type: "choose", title: "צהריים — את בוחרת", meta: "בחירה 1", slotKey: "day3-choices", choiceIndex: 0 },
-        { id: "d3-afternoon", time: "אחה\"צ", type: "choose", title: "אחרי הצהריים — את בוחרת", meta: "בחירה 2", slotKey: "day3-choices", choiceIndex: 1 },
-        { id: "d3-evening", time: "20:00", type: "planned", title: "מסיבה עם כנסיית השכל", meta: "סיום בסטייל" },
+        { id: "d3-lunch", time: "צהריים", type: "planned", title: "קוקו נקו צהריים", meta: "ראמן סאן!" },
+        { id: "d3-afternoon", time: "אחה\"צ", type: "choose", title: "אחרי הצהריים — את בוחרת", meta: "לבחירתך", slotKey: "day3-choices" },
+        { id: "d3-evening", time: "ערב", type: "planned", title: "מסיבה עם כנסיית השכל", meta: "סיום בסטייל" },
         { id: "d3-relax", time: "סוף היום", type: "choose", title: "סוף יום זוגי", meta: "לבחירתך", slotKey: "day3-relax" },
+      ],
+    },
+    {
+      id: "day4",
+      title: "יום רביעי",
+      theme: "צ'אקאוט, חזרה הביתה ועוד מסעדה",
+      dateISO: null,
+      image: "./assets/day4.jpg",
+      imageFallback: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80",
+      imageAlt: "בית, חיבוקים ונוחות",
+      unlock: {
+        question: "על איזה ציוד כושר ישבנו במועדון הקיטקט בזמן שצפינו באקטים",
+        answers: ["אופניים", "אופני אימון"],
+      },
+      items: [
+        { id: "d4-breakfast", time: "בוקר", type: "planned", title: "ארוחת בוקר במלון", meta: "רק אם נצליח לקום" },
+        { id: "d4-checkout", time: "בוקר", type: "planned", title: "צ'אקאוטט", meta: "כבר נגמר?" },
+        { id: "d4-lunch", time: "צהריים", type: "choose", title: "אירוע צהריים לפני חזרה הביתה", meta: "לבחירתך", slotKey: "day4-lunch" },
+        { id: "d4-home", time: "צהריים", type: "planned", title: "חזרה רגועה הביתה", meta: "60 קמ״ש מקסימום" },
+        { id: "d4-movies", time: "אחה\"צ", type: "planned", title: "חיבוקים ונרדמים", meta: "על המיטה המטריפה!" },
+        { id: "d4-dinner", time: "ערב", type: "planned", title: "כי למה אסור עוד מסעדה?", meta: "מסיימים בסטייל" },
       ],
     },
   ],
   choices: {
     "day1-choices": { title: "יום 1 · את בוחרת", subtitle: "בחרי אופציה אחת", optionsKey: "extra", multiPick: false },
     "day2-choices": { title: "יום 2 · את בוחרת", subtitle: "בחרי אופציה אחת", optionsKey: "extra", multiPick: false },
-    "day3-choices": { title: "יום 3 · צהריים ואחה\"צ — את בוחרת", subtitle: "בחרי עד 2 אופציות (צהריים + אחה\"צ)", optionsKey: "extra", multiPick: true, maxPicks: 2 },
+    "day3-choices": { title: "יום 3 · את בוחרת", subtitle: "בחרי אופציה אחת", optionsKey: "extra", multiPick: false },
+    "day4-lunch": { title: "יום 4 · את בוחרת", subtitle: "בחרי אופציה אחת", optionsKey: "extra", multiPick: false },
     "day2-relax": {
       title: "מרגוע · סוף היום",
       subtitle: "בחרי אופציה אחת",
@@ -645,7 +667,7 @@ function init() {
         if (want === secretStep + 1) {
           secretStep++;
           if (secretTimer) clearTimeout(secretTimer);
-          if (secretStep === 3) {
+          if (secretStep === 4) {
             secretStep = 0;
             triggerShowAll();
           } else {
